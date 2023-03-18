@@ -1,0 +1,49 @@
+<section class="section">
+  <div class="container layout-session">
+    <h1 class="mb">Create an account</h1>
+    <div class="style-session">
+      <h4 class="layout-center-text mb">CONTINUE WITH</h4>
+      <%- if devise_mapping.omniauthable? %>
+        <%- resource_class.omniauth_providers.each do |provider| %>
+          <div data-turbo="false">
+            <%= form_with(url: omniauth_authorize_path(resource_name, provider), method: :post) do |form| %>
+              <%= form.submit "#{OmniAuth::Utils.camelize(provider)}", class:"btn btn-secondary size-btn mb" %>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+      <h4 class="layout-center-text mb">OR</h4>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        <div class="field mb">
+          <%= f.label :username %><br />
+          <%= f.text_field :username, placeholder: "example", autofocus: true, autocomplete: "username", class: "input" %>
+        </div>
+        <div class="field mb">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, placeholder: "example@mail.com", autofocus: true, autocomplete: "email", class: "input" %>
+        </div>
+        <div class="field mb">
+          <%= f.label :name %><br />
+          <%= f.text_field :name, placeholder: "Example Name", autofocus: true, autocomplete: "name", class: "input" %>
+        </div>
+        <div class="field mb">
+          <%= f.label :avatar %><br />
+          <%= f.file_field :avatar %>
+        </div>
+        <div class="field mb">
+          <%= f.label :password %>
+          <%= f.password_field :password, placeholder: "********", autocomplete: "new-password", class: "input" %>
+        </div>
+        <div class="field mb">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, placeholder: "********", autocomplete: "new-password", class: "input" %>
+        </div>
+        <div class="actions mb">
+          <%= f.submit "Sign up", class:"btn btn-primary size-btn" %>
+        </div>
+      <% end %>
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</section>

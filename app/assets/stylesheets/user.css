@@ -1,0 +1,18 @@
+.image-profile {
+  border-radius: 50%;
+  width: 96px;
+  height: 96px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.layout-link {
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn-center {
+  margin-right: auto;
+  margin-left: auto;
+}

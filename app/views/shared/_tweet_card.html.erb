@@ -1,0 +1,62 @@
+<div class="card-tweet">
+  <div class="principal-card">
+    <div>
+      <%= link_to user_path(tweet.user) do %>
+        <%= image_tag (tweet.user.avatar.attached? ? tweet.user.avatar : "user-default.png"), class:"avatar-card" %>
+      <% end %>
+    </div>
+    <div>
+      <div>
+        <span><%= link_to tweet.user.name, user_path(tweet.user) %> <span class="primary">@<%= tweet.user.username %></span></span>
+      </div>
+      <div>
+        <small><%= time_ago_in_words(tweet.created_at) %> ago</small>
+      </div>
+    </div>
+  </div>
+  <div class="mb">
+    <p><%= tweet.body %></p>
+  </div>
+  <div class="icons-card">
+    <div>
+      <% if current_user && policy(User).update? || current_user && current_user.id == tweet.user_id %>
+        <div class="icon-card-flex">
+          <div>
+            <%= link_to edit_tweet_path(tweet) do %>
+              <%= image_tag "Edit.svg", class: :ico %>
+            <% end %>
+          </div>
+          <div>
+            <%= link_to image_tag("Trash.svg") , tweet_path(tweet), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},class:"move-trash"%>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="icon-card-flex">
+      <div class="icon-card-flex">
+        <div>
+          <%= link_to tweet_path(tweet) do %>
+            <%= image_tag "Message.svg", class: :ico %>
+          <% end %>
+        </div>
+        <div>
+          <span><%= tweet.replied_to.count %></span>
+        </div>
+      </div>
+      <div class="icon-card-flex">
+        <% if current_user && Like.find_by(tweet_id: tweet.id, user_id: current_user.id) %>
+          <div>
+            <%= link_to image_tag("Like.svg"), like_path(id: tweet.id ), data: {turbo_method: :delete} %>
+          </div>
+        <% else %>
+          <div>
+            <%= link_to image_tag("Unlike.svg"), like_path(id: tweet.id ), data: {turbo_method: :delete} %>
+          </div>
+        <% end %>
+        <div>
+          <span><%= tweet.likes.count %></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

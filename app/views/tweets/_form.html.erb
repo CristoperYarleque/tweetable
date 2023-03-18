@@ -1,0 +1,20 @@
+<%=form_with model: tweet do |form| %>
+  <% if @tweet.errors.any? %>
+    <div>
+      <ul>
+        <% @tweet.errors.full_messages.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+    <div class="position-relative">
+      <% if data %>
+        <%= form.hidden_field :tweet_id, value: data.id  %>
+      <% end %>
+      <%= form.text_area :body,placeholder: "Remember to thing before write...", class:"input resize-none" %>
+      <%= form.submit "Tweet", class:"btn btn-primary position-absolute" %>
+    </div>
+  </div>
+<% end %>

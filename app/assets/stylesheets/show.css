@@ -1,0 +1,6 @@
+.pointer {
+  cursor: pointer;
+}
+.line {
+  border-bottom: 4px solid var(--color-primary);
+}

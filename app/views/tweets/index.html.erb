@@ -1,0 +1,15 @@
+<section class="section">
+  <div class="container">
+    <h1 class="layout-center-text mb">Home</h1>
+    <% if current_user %>
+      <div>
+        <%= render "form",data: nil, tweet: @tweet %>
+      </div>
+    <% end %>
+    <div>
+      <% @tweets.each do |tweet| %>
+        <%= render "shared/tweet_card", tweet: tweet  %>
+      <% end %>
+    </div>
+  </div>
+</section>

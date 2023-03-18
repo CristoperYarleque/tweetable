@@ -1,0 +1,47 @@
+<section class="section">
+  <div class="container layout-session">
+    <h2 class="mb">Edit Profile</h2>
+    <div class="style-session">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        <div class="field mb">
+          <%= f.label :username %><br />
+          <%= f.text_field :username, autofocus: true, autocomplete: "username", class:"input" %>
+        </div>
+        <div class="field mb">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"input" %>
+        </div>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <% end %>
+        <div class="field mb">
+          <%= f.label :name %><br />
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", class:"input" %>
+        </div>
+        <div class="field mb">
+          <%= f.label :avatar %><br />
+          <%= f.file_field :avatar %>
+        </div>
+        <div class="field mb">
+          <%= f.label :password %><br />
+          <%= f.password_field :password, placeholder: "********", autocomplete: "new-password", class:"input" %>
+        </div>
+        <div class="field mb">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, placeholder: "********", autocomplete: "new-password", class: "input" %>
+        </div>
+        <% if current_user.uid.nil? %>
+          <div class="field mb">
+            <%= f.label :current_password %><br />
+            <%= f.password_field :current_password, placeholder: "********", autocomplete: "current-password", class: "input" %>
+          </div>
+        <% end %>
+        <div class="actions mb">
+          <%= f.submit "Update", class: "btn btn-primary size-btn" %>
+        </div>
+      <% end %>
+      <%= link_to "Back", :back, class: "primary" %>
+    </div>
+  </div>
+</section>

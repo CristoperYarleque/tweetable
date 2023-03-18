@@ -1,0 +1,22 @@
+.layout-session {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.size-btn {
+  width: 100%;
+}
+
+.style-session {
+  padding: 1em;
+  background-color: white;
+  border-radius: 1em;
+  box-shadow: 4px 4px 2px var(--gray-300);
+}
+
+.padding-button-menu{
+  padding: 0.2em 0.5em;
+}
+
+

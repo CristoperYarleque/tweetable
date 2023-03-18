@@ -1,0 +1,53 @@
+.principal-card {
+  display: flex;
+  gap: 1em;
+}
+
+.avatar-card{
+  border-radius: 50%;
+  width: 48px;
+}
+
+.icons-card{
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon-card-flex {
+  display: flex;
+  gap: 0.4em;
+}
+
+.move-trash{
+  position: relative;
+  bottom: 2px;
+}
+
+body {
+  background-color: var(--color-bg);
+}
+
+.card-tweet {
+  background-color: white;
+  margin: 1em;
+  border-radius: 0.5em;
+  padding: 0.5em;
+}
+
+.position-absolute {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+.position-relative {
+  position: relative;
+}
+
+.resize-none{
+  resize: none;
+  width: 99%;
+}
+
+.mb {
+  margin-bottom: 1em;
+}

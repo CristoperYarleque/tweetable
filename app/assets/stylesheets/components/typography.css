@@ -1,0 +1,87 @@
+/* body text */
+.text-xl {
+  font-size: calc(20 / 16 * 1rem);
+  line-height: 1.5;
+}
+
+.text-lg {
+  font-size: calc(18 / 16 * 1rem);
+  line-height: 1.5;
+}
+
+.text,
+.text-md {
+  font-size: calc(16 / 16 * 1rem);
+  line-height: 1.5;
+}
+
+.text-sm {
+  font-size: calc(14 / 16 * 1rem);
+  line-height: 1.5;
+}
+
+.text-xs {
+  font-size: calc(12 / 16 * 1rem);
+  line-height: 1.5;
+}
+
+/* overline */
+.overline {
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+}
+
+/* monospace */
+.mono {
+  font-family: var(--font-mono);
+}
+
+/* headings */
+.heading-3xl {
+  font-size: calc(72 / 16 * 1rem);
+  line-height: 4.5;
+}
+
+.heading-2xl {
+  font-size: calc(60 / 16 * 1rem);
+  line-height: 3.75;
+}
+
+.heading-xl {
+  font-size: calc(48 / 16 * 1rem);
+  line-height: 3;
+}
+
+.heading-lg {
+  font-size: calc(36 / 16 * 1rem);
+  line-height: 2.25;
+}
+
+.heading-md {
+  font-size: calc(30 / 16 * 1rem);
+  line-height: 2.25;
+}
+
+.heading-sm {
+  font-size: calc(24 / 16 * 1rem);
+  line-height: 2;
+}
+
+.heading-xs {
+  font-size: calc(20 / 16 * 1rem);
+  line-height: 1.75;
+}
+
+
+/* weight */
+.light {
+  font-weight: var(--light);
+}
+
+.regular {
+  font-weight: var(--regular);
+}
+
+.semibold {
+  font-weight: var(--semibold);
+}

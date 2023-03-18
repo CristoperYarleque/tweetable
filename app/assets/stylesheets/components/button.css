@@ -1,0 +1,83 @@
+/* btn general */
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  line-height: 1rem;
+  border-radius: 8px;
+  font-weight: var(--semibold);
+  border: none;
+}
+
+.btn:focus {
+  outline: 3px solid hsla(213, 94%, 68%, 1);
+}
+
+.btn svg,
+.btn img {
+  width: 1em;
+  height: 1em;
+}
+
+.btn:disabled {
+  color: inherit;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* btn default */
+.btn-default {
+  background-color: var(--gray-300);
+}
+
+.btn-default:hover {
+  background-color: var(--gray-400);
+}
+
+.btn-default:active {
+  background-color: var(--gray-500);
+}
+
+/* btn size */
+.btn-sm {
+  font-size: calc(14 / 16 * 1rem);
+  line-height: calc(14 / 16 * 1rem);
+  padding: 8px 12px;
+}
+
+.btn-lg {
+  font-size: calc(18 / 16 * 1rem);
+  line-height: calc(18 / 16 * 1rem);
+  padding: 14px 24px;
+}
+
+/* btn primary */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--pink-700);
+}
+
+.btn-primary:active {
+  background-color: var(--pink-800);
+}
+
+.btn-primary:disabled {
+  color: white;
+}
+
+/* btn secondary */
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+.btn-primary:disabled {
+  color: white;
+}

@@ -1,0 +1,19 @@
+<section class="section">
+  <div class="container">
+    <h1>Tweet Details</h1>
+    <div>
+      <%= render "shared/tweet_card", tweet: @tweet  %>
+    </div>
+    <% if current_user %>
+      <div>
+        <%= render "form", data: @tweet, tweet: @new_tweet %>
+      </div>
+    <% end %>
+    <hr>
+    <div>
+      <% @tweets.each do |tweet| %>
+        <%= render "shared/tweet_card", tweet: tweet  %>
+      <% end %>
+    </div>
+  </div>
+</section>

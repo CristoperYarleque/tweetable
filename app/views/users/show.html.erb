@@ -1,0 +1,58 @@
+<section class="section">
+  <div class="container">
+    <h1 class="layout-center-text">Profile</h1>
+    <div>
+      <%= image_tag (@user.avatar.attached? ? @user.avatar : "user-default.png"), class: "image-profile" %>
+    </div>
+    <div class="layout-center-text mb">
+      <div>
+        <h2><%= @user.name%></h2>
+        <p>@<%= @user.username%></p>
+        <small > Joined on <%= @user.created_at.strftime("%d %b, %Y") %></small>
+        <br>
+        <br>
+        <div>
+          <% if current_user && current_user.id == @user.id %>
+            <%= link_to edit_user_registration_path do %>
+              <button class="btn btn-primary btn-center">Edit Profile</button>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="layout-link">
+      <% tweets_user = Tweet.where(user_id: @user.id) %>
+      <p id="show-tweets" class="pointer line">Tweets ( <%= tweets_user.count %> )</p>
+      <p id="show-likes" class="pointer">Likes ( <%= @user.likes.count %> )</p>
+    </div>
+    <div id="tweets" style="display: block;">
+      <% tweets_user.each do |tweet| %>
+        <%= render "shared/tweet_card", tweet: tweet %>
+      <% end %>
+    </div>
+    <div id="likes" style="display: none;">
+      <% @user.likes.each do |like| %>
+        <% tweet_user = Tweet.find_by(id: like.tweet_id) %>
+        <%= render "shared/tweet_card", tweet: tweet_user %>
+      <% end %>
+    </div>
+  </section>
+  <script>
+    var showTweets = document.getElementById("show-tweets")
+    var tweets = document.getElementById("tweets")
+    var likes = document.getElementById("likes")
+    showTweets.addEventListener("click", function() {
+    tweets.style.display = "block";
+    likes.style.display = "none";
+    showTweets.classList.add("line")
+    showLikes.classList.remove("line")
+    });
+
+    var  showLikes = document.getElementById("show-likes")
+    showLikes.addEventListener("click", function() {
+    tweets.style.display = "none";
+    likes.style.display = "block";
+    showLikes.classList.add("line")
+    showTweets.classList.remove("line")
+    });
+  </script>

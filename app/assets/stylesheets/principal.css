@@ -1,0 +1,44 @@
+.logo-size {
+  max-width: 250px;
+}
+
+.layout-button {
+  border: none;
+  border-radius: 10px;
+  background-color: var(--gray-400);
+}
+
+.layout-button-login {
+  border: none;
+  border-radius: 10px;
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.menu:active {
+  transform: scale(1, 0.9);
+}
+
+.menu-logo-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-hidden {
+  display: none;
+}
+
+.menu-show {
+  display: block;
+}
+
+.layout-session {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.layout-center-text {
+  text-align: center;
+}
