@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
   database: tweetable_production
   username: tweetable
   password: <%= ENV["TWEETABLE_DATABASE_PASSWORD"] %>
